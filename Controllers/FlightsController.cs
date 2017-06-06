@@ -22,8 +22,8 @@ namespace SyracuseAirportApi.Controllers
         {
             try
             {
-                XmlDocument doc = _flightRepository.GetFlights();
-                return Ok(JsonConvert.SerializeXmlNode(doc));
+                XmlNodeList doc = _flightRepository.GetFlights();
+                return Ok(JsonConvert.SerializeObject(doc));
             }
             catch (Exception ex)
             {
@@ -37,8 +37,8 @@ namespace SyracuseAirportApi.Controllers
         {
             try
             {
-                XmlDocument doc = _flightRepository.GetFlightsByNumber(number);
-                return Ok(JsonConvert.SerializeXmlNode(doc));
+                XmlNodeList doc = _flightRepository.GetFlightsByNumber(number);
+                return Ok(JsonConvert.SerializeObject(doc));
             }
             catch (Exception ex)
             {
@@ -52,8 +52,8 @@ namespace SyracuseAirportApi.Controllers
         {
             try
             {
-                XmlDocument doc = _flightRepository.GetFlightsByGate(gate);
-                return Ok(JsonConvert.SerializeXmlNode(doc));
+                XmlNodeList doc = _flightRepository.GetFlightsByGate(gate);
+                return Ok(JsonConvert.SerializeObject(doc));
             }
             catch (Exception ex)
             {
@@ -67,8 +67,8 @@ namespace SyracuseAirportApi.Controllers
         {
             try
             {
-                XmlDocument doc = _flightRepository.GetFlightsByCity(city);
-                return Ok(JsonConvert.SerializeXmlNode(doc));
+                XmlNodeList doc = _flightRepository.GetFlightsByCity(city);
+                return Ok(JsonConvert.SerializeObject(doc));
             }
             catch (Exception ex)
             {
@@ -82,8 +82,8 @@ namespace SyracuseAirportApi.Controllers
         {
             try
             {
-                XmlDocument doc = _flightRepository.GetFlightsByDirection(direction);
-                return Ok(JsonConvert.SerializeXmlNode(doc));
+                XmlNodeList doc = _flightRepository.GetFlightsByDirection(direction);
+                return Ok(JsonConvert.SerializeObject(doc));
             }
             catch (Exception ex)
             {

@@ -31,7 +31,7 @@ namespace SyracuseAirportApi
             // Add framework services.
             services.AddMvc();
 
-            // Dependency injection
+            // Dependency injection.
             services.AddSingleton<FlightContext>(new FlightContext(Configuration.GetSection("DataEndpoint").Value));
             services.AddScoped<IFlightRepository, FlightRepository>();
 

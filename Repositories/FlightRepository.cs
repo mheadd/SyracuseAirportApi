@@ -5,11 +5,11 @@ namespace SyracuseAirportApi.Repositories
 {
     public interface IFlightRepository
     {
-        XmlDocument GetFlights();
-        XmlDocument GetFlightsByNumber(int number);
-        XmlDocument GetFlightsByGate(int gate);
-        XmlDocument GetFlightsByCity(string city);
-        XmlDocument GetFlightsByDirection(string direction);
+        XmlNodeList GetFlights();
+        XmlNodeList GetFlightsByNumber(int number);
+        XmlNodeList GetFlightsByGate(int gate);
+        XmlNodeList GetFlightsByCity(string city);
+        XmlNodeList GetFlightsByDirection(string direction);
     }
     public class FlightRepository : IFlightRepository
     {
@@ -20,38 +20,39 @@ namespace SyracuseAirportApi.Repositories
             _context = context;
         }
 
-        public XmlDocument GetFlights() {
+        public XmlNodeList GetFlights()
+        {
             string xpath = "//*";
             _xmldoc.LoadXml(_context.GetXmlData(xpath));
-            return _xmldoc;
+            return _xmldoc.GetElementsByTagName("flight");
         }
 
-        public XmlDocument GetFlightsByNumber(int number)
+        public XmlNodeList GetFlightsByNumber(int number)
         {
             string xpath = String.Format("//flight[@flightnumber='{0}']", number);
             _xmldoc.LoadXml(_context.GetXmlData(xpath));
-            return _xmldoc;
+            return _xmldoc.GetElementsByTagName("flight");
         }
-        
-        public XmlDocument GetFlightsByGate(int gate)
+
+        public XmlNodeList GetFlightsByGate(int gate)
         {
             string xpath = String.Format("//flight[@gate='{0}']", gate);
             _xmldoc.LoadXml(_context.GetXmlData(xpath));
-            return _xmldoc;
+            return _xmldoc.GetElementsByTagName("flight");
         }
 
-        public XmlDocument GetFlightsByCity(string city)
+        public XmlNodeList GetFlightsByCity(string city)
         {
             string xpath = String.Format("//flight[@city='{0}']", city);
             _xmldoc.LoadXml(_context.GetXmlData(xpath));
-            return _xmldoc;
+            return _xmldoc.GetElementsByTagName("flight");
         }
 
-        public XmlDocument GetFlightsByDirection(string direction)
+        public XmlNodeList GetFlightsByDirection(string direction)
         {
             string xpath = String.Format("//flight[@type='{0}']", direction);
             _xmldoc.LoadXml(_context.GetXmlData(xpath));
-            return _xmldoc;
+            return _xmldoc.GetElementsByTagName("flight");
         }
     }
 }

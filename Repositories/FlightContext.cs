@@ -1,4 +1,5 @@
 using System.Net.Http;
+using System.Xml;
 using System.Xml.XPath;
 
 namespace SyracuseAirportApi.Repositories
@@ -19,8 +20,15 @@ namespace SyracuseAirportApi.Repositories
                 var response = client.GetStreamAsync(_endpoint);
                 XPathDocument document = new XPathDocument(response.Result);
                 XPathNavigator navigator = document.CreateNavigator();
-                XPathNavigator node = navigator.SelectSingleNode(xpath);
-                return node.OuterXml;
+                XPathNodeIterator node = navigator.Select(xpath);
+
+               string flights = "<results>";
+                while (node.MoveNext())
+                {
+                    flights += node.Current.OuterXml;
+                }
+                flights += "</results>";
+                return flights;
             }
         }
     }
