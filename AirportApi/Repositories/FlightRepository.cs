@@ -1,7 +1,7 @@
 using System;
 using System.Xml;
 
-namespace SyracuseAirportApi.Repositories
+namespace AirportAPI.Repositories
 {
     public interface IFlightRepository
     {

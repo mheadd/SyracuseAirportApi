@@ -2,9 +2,9 @@
 using System.Xml;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using SyracuseAirportApi.Repositories;
+using AirportAPI.Repositories;
 
-namespace SyracuseAirportApi.Controllers
+namespace AirportAPI.Controllers
 {
     [Route("api/[controller]")]
     public class FlightsController : Controller

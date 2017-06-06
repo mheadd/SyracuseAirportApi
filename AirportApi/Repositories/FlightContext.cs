@@ -2,7 +2,7 @@ using System.Net.Http;
 using System.Xml;
 using System.Xml.XPath;
 
-namespace SyracuseAirportApi.Repositories
+namespace AirportAPI.Repositories
 {
     public class FlightContext
     {

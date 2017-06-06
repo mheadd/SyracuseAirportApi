@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using SyracuseAirportApi.Repositories;
+using AirportAPI.Repositories;
 
 namespace SyracuseAirportApi
 {
