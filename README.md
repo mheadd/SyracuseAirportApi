@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mheadd/SyracuseAirportApi.svg?branch=master)](https://travis-ci.org/mheadd/SyracuseAirportApi)
+
 # Syracuse Airport API
 
 An API for flight data from the Syracuse Hancock International Airport.
